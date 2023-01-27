@@ -7,8 +7,6 @@ import PackageDescription
 let package = Package(
     name: "TDLibKit",
     platforms: [
-        .iOS(.v9),
-        .macOS(.v10_12),
         .watchOS(.v2), // Based on iOS 9 version
         .tvOS(.v9) // Based on iOS 9 version
     ],
@@ -19,7 +17,7 @@ let package = Package(
             targets: ["TDLibKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Swiftgram/TDLibFramework", .exact("1.8.10-758ced94")),
+        .package(url: "https://github.com/georgeprokopenko/TDLibFramework"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

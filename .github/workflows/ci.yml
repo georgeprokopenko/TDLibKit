@@ -36,14 +36,11 @@ jobs:
 
       - name: Get latest Github release
         id: framework_releases
-        uses: joutvhu/get-release@v1.0.0
+        uses: joutvhu/get-release@v1.0.2
         with:
-          owner: georgeprokopenko
           repo: TDLibFramework
           latest: true
           throwing: true
-        env:
-          GITHUB_TOKEN:  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
 
       - name: Set TDLibFramework version
         run: python3 scripts/swift_package_generator.py "${{ steps.framework_releases.outputs.tag_name }}"

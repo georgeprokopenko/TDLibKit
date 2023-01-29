@@ -43,7 +43,7 @@ jobs:
           latest: true
           throwing: true
         env:
-          GITHUB_TOKEN: ${{ secrets.TEST_ENV_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
       - name: Set TDLibFramework version
         run: python3 scripts/swift_package_generator.py "${{ steps.framework_releases.outputs.tag_name }}"

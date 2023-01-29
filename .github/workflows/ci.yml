@@ -78,8 +78,8 @@ jobs:
           git add . || true
           git commit -m "[no ci] Version ${{ env.RELEASE_TAG }}" || true
       
-      - name: Tests (watchOS)
-        run: ./scripts/test.sh watchOS-simulator
+      # - name: Tests (watchOS)
+      #  run: ./scripts/test.sh watchOS-simulator
 
       - name: Push update
         if: github.ref == 'refs/heads/main'

@@ -19,7 +19,7 @@ let package = Package(
             targets: ["TDLibKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/georgeprokopenko/TDLibFramework", .exact("{tdlibframework_version}")),
+        .package(url: "https://github.com/georgeprokopenko/TDLibFramework", .branch: "main"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

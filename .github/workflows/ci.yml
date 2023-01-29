@@ -78,15 +78,15 @@ jobs:
           git add . || true
           git commit -m "[no ci] Version ${{ env.RELEASE_TAG }}" || true
       
-      # - name: Tests (watchOS)
-      #   run: ./scripts/test.sh watchOS-simulator
+      - name: Tests (watchOS)
+        run: ./scripts/test.sh watchOS-simulator
 
       - name: Push update
         if: github.ref == 'refs/heads/main'
         run: git push origin main || true
 
       - name: Clean local files
-        if: github.ref != 'refs/heads/main'
+        # if: github.ref != 'refs/heads/main'
         run: |
           git clean -nfdx
           git clean -fdx
@@ -95,7 +95,7 @@ jobs:
           rm -rf .build
 
       - name: Upload artifact
-        if: github.ref != 'refs/heads/main'
+        # if: github.ref != 'refs/heads/main'
         uses: actions/upload-artifact@v2
         with:
           name: TDLibKit-${{ github.sha }}

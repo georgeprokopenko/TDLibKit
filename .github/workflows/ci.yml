@@ -43,7 +43,7 @@ jobs:
           latest: true
           throwing: true
         env:
-          repo-token:  ${{ secrets.TOKEN }}
+          token: ${{ secrets.ENV_TOKEN }}
 
       - name: Set TDLibFramework version
         run: python3 scripts/swift_package_generator.py "${{ steps.framework_releases.outputs.tag_name }}"

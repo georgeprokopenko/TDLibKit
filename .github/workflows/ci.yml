@@ -43,7 +43,7 @@ jobs:
           latest: true
           throwing: true
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          token: ${{ secrets.TOKEN }}
 
       - name: Set TDLibFramework version
         run: python3 scripts/swift_package_generator.py "${{ steps.framework_releases.outputs.tag_name }}"
@@ -108,7 +108,7 @@ jobs:
           delete_release: true
           tag_name: ${{ env.RELEASE_TAG }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
       - name: Release
         if: github.ref == 'refs/heads/main'
@@ -119,4 +119,4 @@ jobs:
           files: ${{ env.ARTIFACT_PATH }}
           body: "TDLibKit based on TDLib-${{ env.TDLIB_VERSION }} commit [${{ env.TDLIB_COMMIT }}](${{ env.TDLIB_COMMIT_URL }})"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
